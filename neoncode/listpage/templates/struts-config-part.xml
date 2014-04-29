@@ -1,0 +1,10 @@
+<form-bean name="{{ action.formBeanClassName }}" type="{{ action.formBeanClass }}"/>
+
+
+<action path="{{ action.init }}" name="{{ action.formBeanClassName }}" type="{{ action.actionClass }}" parameter="init" scope="session">
+    <forward name="success" path="{{ action.list }}.do" redirect="true"/>
+</action>
+
+<action input="{{ jsp.listfile }}" path="{{ action.list }}" name="{{ action.formBeanClassName }}" type="{{ action.actionClass }}" parameter="list" scope="session">
+    <forward name="success" path="{{ jsp.listfile }}"/>
+</action>

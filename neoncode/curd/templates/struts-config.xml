@@ -1,0 +1,28 @@
+<form-bean name="{{ java.formBeanClassName }}" type="{{ java.formBeanClass }}"/>
+
+
+<action input="{{ jsp.listfile }}" path="{{ action.list }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="list" scope="session">
+    <forward name="success" path="{{ jsp.listfile }}"/>
+</action>
+
+<action input="{{ jsp.createfile }}" path="{{ action.create }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="create" scope="session">
+    <forward name="success" path="{{ jsp.createfile }}"/>
+</action>
+
+<action input="{{ jsp.viewfile }}" path="{{ action.view }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="view" scope="session">
+    <forward name="success" path="{{ jsp.viewfile }}"/>
+</action>
+
+<action input="{{ jsp.editfile }}" path="{{ action.edit }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="edit" scope="session">
+    <forward name="success" path="{{ jsp.editfile }}"/>
+</action>
+
+<action input="{{ jsp.editfile }}" path="{{ action.save }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="save" scope="session">
+    <forward name="success" path="{{ jsp.viewfile }}"/>
+</action>
+
+<action input="{{ jsp.viewfile }}" path="{{ action.delete }}" name="{{ java.formBeanClassName }}" type="{{ java.actionClass }}" parameter="delete" scope="session">
+    <forward name="failure" path=".admin.errorDef" />
+    <forward name="success" path="{{ action.list }}" redirect="true"/>
+</action>
+
